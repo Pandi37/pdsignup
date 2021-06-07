@@ -6,8 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
-const hostname = 'localhost';
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 dotenv.config()
 
@@ -62,6 +61,6 @@ app.post('/signup',function(req,res){
     });
 })
 
-app.listen(port, hostname, () => {
+app.listen(port, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
