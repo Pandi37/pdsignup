@@ -49,14 +49,15 @@ app.post('/signup',function(req,res){
         }
     });
     
-    var User = mongoose.model('User',signUpSchema, 'users');
-    var User1 = new User({ username: 'pandi', password: '12345', email:'pandi@mail.com', mobile:'9876543210'});
+    const User = mongoose.model('User',signUpSchema, 'users');
+
+    const User1 = new User({ username: username, email: email, password: password, mobile: mobile});
 
     User1.save(function (err, data){
         if(err){
-            res.send({status:0,result:err})
+            res.send({status:0, result:err})
         } else {
-            res.send({status:1,result:data})
+            res.send({status:1, result:data})
         }
     });
 })
