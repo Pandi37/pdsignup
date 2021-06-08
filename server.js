@@ -50,7 +50,7 @@ app.post('/signup',function(req,res){
     });
     
     var User = mongoose.model('User',signUpSchema, 'users');
-    var User1 = new User({ name: 'pandi', password: '12345', email:'pandi@mail.com', mobile:'9876543210'});
+    var User1 = new User({ username: 'pandi', password: '12345', email:'pandi@mail.com', mobile:'9876543210'});
 
     User1.save(function (err, data){
         if(err){
