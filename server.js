@@ -13,7 +13,7 @@ dotenv.config()
 mongoose.connect(process.env.DATABASE_ACCESS,() => console.log("Database Connected"))
 
 
-app.use(cors())
+app.use(cors({ credentials: true }))
 
 app.use(bodyParser.urlencoded({ extended: false}))
 
