@@ -19,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false}))
 
 app.use(bodyParser.json())
 
+app.get("/", function (req, res){
+    res.send("Working..!");
+});
+
 app.post('/signup',function(req,res){
     
     var username = req.body.username;
